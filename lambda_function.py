@@ -37,6 +37,3 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps('Hello from Lambda!')
     }
-
-
-lambda_handler('event', 'context')
