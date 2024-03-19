@@ -11,9 +11,7 @@ def lambda_handler(event, context):
     # print(event)
     bucket = event['Records'][0]['s3']['bucket']['name']
     key = event['Records'][0]['s3']['object']['key']
-    with open('2024-03-01-raw_input.json') as f:
-        d = json.load(f)
-        print(d)
+    
     try:
         response = s3.get_object(Bucket=bucket, Key=key)
         status = response.get("ResponseMetadata", {}).get("HTTPStatusCode")
